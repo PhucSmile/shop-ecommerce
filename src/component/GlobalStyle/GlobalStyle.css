@@ -8,6 +8,8 @@
     --hero-bg: #d6e5fb;
     --small-text-color: #999;
     --heading-text-color: #0a1d37;
+    --active: #df2020;
+    --white: #fff;
     --heading-fontSize: 2rem;
 }
 
@@ -56,9 +58,13 @@ h2 {
     font-size: var(--heading-fontSize);
 }
 
-/* section {
+img {
+    width: 100%;
+}
+
+section {
     padding: 60px 0px;
-} */
+}
 
 /* scrollBar css */
 /* html body {
