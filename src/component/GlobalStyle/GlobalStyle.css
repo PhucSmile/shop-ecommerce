@@ -10,6 +10,7 @@
     --heading-text-color: #0a1d37;
     --active: #df2020;
     --white: #fff;
+    --text: #111;
     --heading-fontSize: 2rem;
 }
 
@@ -64,6 +65,11 @@ img {
 
 section {
     padding: 60px 0px;
+}
+
+.section__title {
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 /* scrollBar css */

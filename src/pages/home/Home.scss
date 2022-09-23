@@ -1,0 +1,36 @@
+.hero__section {
+    background-color: var(--hero-bg);
+
+    .hero__content {
+        padding-top: 45px;
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        p {
+            color: var(--primary-color);
+            line-height: 28px;
+            &:nth-child(1) {
+                font-weight: 500;
+            }
+        }
+
+        .buy__btn {
+            font-size: 1rem;
+            outline: none;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            background-color: var(--primary-color);
+
+            cursor: pointer;
+            margin-top: 40px;
+            a {
+                color: var(--white);
+            }
+        }
+    }
+}

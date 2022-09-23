@@ -35,7 +35,6 @@ const Header = () => {
                                 <img src={logo} alt="logo" />
                                 <div>
                                     <h1>Maltimart</h1>
-                                    <p>Since 1995</p>
                                 </div>
                             </Link>
                         </div>
