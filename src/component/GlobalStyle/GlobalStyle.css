@@ -72,6 +72,22 @@ section {
     font-weight: 600;
 }
 
+/* button */
+.buy__btn {
+    font-size: 1rem;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    margin-top: 40px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+.buy__btn a {
+    color: var(--white);
+}
+
 /* scrollBar css */
 /* html body {
   overflow-y: overlay;

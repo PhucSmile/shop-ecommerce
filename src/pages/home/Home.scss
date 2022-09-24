@@ -17,20 +17,40 @@
                 font-weight: 500;
             }
         }
+    }
+}
+
+// Time Count
+.time__count {
+    background-color: var(--primary-color);
+    height: 300px;
+
+    .clock__content {
+        h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
 
         .buy__btn {
-            font-size: 1rem;
-            outline: none;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 5px;
-            background-color: var(--primary-color);
-
-            cursor: pointer;
-            margin-top: 40px;
+            &.btn__clock {
+                background-color: var(--white);
+            }
             a {
-                color: var(--white);
+                color: var(--primary-color);
             }
         }
+    }
+
+    img {
+        width: 70%;
+        height: 70%;
+        object-fit: contain;
     }
 }

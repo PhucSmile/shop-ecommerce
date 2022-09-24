@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.scss';
 
 import { Link } from 'react-router-dom';
@@ -10,13 +10,29 @@ import Col from 'react-bootstrap/Col';
 
 import Services from '../../component/services/Services';
 import ProductList from '../../component/UI/producList/ProductList';
+import Clock from '../../component/UI/clock/Clock';
 
 import heroImg from '../../assets/images/hero-img.png';
+import countTimeImg from '../../assets/images/counter-timer-img.png';
+import product from '../../assets/data/products';
 
 import { motion } from 'framer-motion';
 
 const Home = () => {
+    const [trendingProducts, setTrendingProducts] = useState([]);
+    const [bestSalesProducts, setBestSalesProducts] = useState([]);
+
     const year = new Date().getFullYear();
+
+    // API
+    useEffect(() => {
+        const filteredTrendingProducts = product.filter((product) => product.category === 'chair');
+        const filteredBestSalerProducts = product.filter((product) => product.category === 'sofa');
+
+        setTrendingProducts(filteredTrendingProducts);
+        setBestSalesProducts(filteredBestSalerProducts);
+    }, []);
+
     return (
         <Helmet title="Home">
             <section className="hero__section">
@@ -53,7 +69,40 @@ const Home = () => {
                         <Col lg={12} className="text-center">
                             <h2 className="section__title">Trending Products</h2>
                         </Col>
-                        <ProductList />
+                        <ProductList data={trendingProducts} />
+                    </Row>
+                </Container>
+            </section>
+
+            {/* Best sales */}
+            <section className="best__sales">
+                <Container>
+                    <Row>
+                        <Col lg={12} className="text-center">
+                            <h2 className="section__title">Best Sales</h2>
+                        </Col>
+                        <ProductList data={bestSalesProducts} />
+                    </Row>
+                </Container>
+            </section>
+
+            {/* Time Count */}
+            <section className="time__count">
+                <Container>
+                    <Row>
+                        <Col lg={6} md={6}>
+                            <div className="clock__content">
+                                <h4>Limited Offers</h4>
+                                <h3>Quantity Armchair</h3>
+                                <Clock />
+                                <motion.button whileTap={{ scale: 1.2 }} className="buy__btn btn__clock">
+                                    <Link to="/shop">Visit Store</Link>
+                                </motion.button>
+                            </div>
+                        </Col>
+                        <Col lg={6} md={6} className="text-end">
+                            <img src={countTimeImg} alt="Time Count" />
+                        </Col>
                     </Row>
                 </Container>
             </section>

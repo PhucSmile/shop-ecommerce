@@ -1,17 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ProductList.scss';
 
 import ProductCart from '../productCart/ProductCart';
 
-const ProductList = () => {
+const ProductList = ({ data }) => {
     return (
         <>
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
+            {data.map((item, index) => (
+                <ProductCart key={index} item={item} />
+            ))}
         </>
     );
+};
+
+ProductList.propTypes = {
+    data: PropTypes.array.isRequired,
 };
 
 export default ProductList;

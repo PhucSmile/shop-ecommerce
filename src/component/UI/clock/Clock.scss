@@ -1,0 +1,22 @@
+.clock__wrap {
+    .clock__data {
+        div {
+            h5,
+            h1 {
+                color: var(--white);
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 8px;
+            }
+            h5 {
+                font-size: 1rem;
+            }
+        }
+        span {
+            color: var(--white);
+            font-size: 1rem;
+        }
+    }
+}
