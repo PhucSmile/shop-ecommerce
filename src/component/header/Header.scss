@@ -2,6 +2,7 @@
     width: 100%;
     height: 70px;
     line-height: 70px;
+
     .header__nav {
         .logo {
             a {
@@ -111,6 +112,105 @@
             // mobile menu
             &.mobile__menu {
                 display: none;
+            }
+        }
+    }
+
+    // scroll
+    &.sticky-scroll {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+        box-shadow: 3px 3px 10px -3px #ddd;
+        background-color: var(--white);
+        animation: slide-down 0.8s;
+    }
+    @keyframes slide-down {
+        0% {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        100% {
+            opacity: 0.9;
+            transform: translateY(0);
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        height: 60px;
+        line-height: 60px;
+        .header__nav {
+            .logo {
+                a {
+                    img {
+                        width: 25px;
+                        height: 25px;
+                    }
+                    div {
+                        h1 {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+
+            .navigation {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                display: none;
+                animation: slide-right ease 0.8s;
+
+                @keyframes slide-right {
+                    from {
+                        opacity: 0;
+                        width: 133%;
+                    }
+                    to {
+                        opacity: 1;
+                        width: 100%;
+                    }
+                }
+
+                .menu {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 250px;
+                    height: 100%;
+                    background-color: var(--white);
+                    z-index: 9999;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+            }
+
+            .active__menu {
+                display: block;
+            }
+            .navbar__icon {
+                span {
+                    i {
+                        font-size: 1.2rem;
+                    }
+
+                    img {
+                        width: 25px;
+                        height: 25px;
+                    }
+
+                    &.mobile__menu {
+                        display: block;
+                    }
+                }
             }
         }
     }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import './Header.scss';
 import { motion } from 'framer-motion';
 
@@ -25,8 +25,20 @@ const nav__links = [
 ];
 
 const Header = () => {
+    const [stickyScroll, setStickyScroll] = useState(false);
+    const menuRef = useRef(null);
+
+    window.onscroll = () => {
+        setStickyScroll(window.scrollY > 80 ? true : false);
+        return window.onscroll(null);
+    };
+
+    const menuToggle = () => {
+        menuRef.current.classList.toggle('active__menu');
+    };
+
     return (
-        <header className="header">
+        <header className={`header ${stickyScroll ? 'sticky-scroll' : ''}`}>
             <Container>
                 <Row>
                     <div className="header__nav d-flex justify-content-between align-items-center">
@@ -40,7 +52,7 @@ const Header = () => {
                         </div>
 
                         {/* Menu */}
-                        <div className="navigation">
+                        <div className="navigation" ref={menuRef} onClick={menuToggle}>
                             <div className="menu d-flex align-items-center gap-5">
                                 {nav__links.map((item, index) => (
                                     <NavLink
@@ -67,7 +79,7 @@ const Header = () => {
                                 <motion.img whileTap={{ scale: 1.2 }} src={user} alt="user" />
                             </span>
                             <span className="mobile__menu">
-                                <i className="ri-menu-line"></i>
+                                <i className="ri-menu-line" onClick={menuToggle}></i>
                             </span>
                         </div>
                     </div>

@@ -21,6 +21,9 @@ import { motion } from 'framer-motion';
 const Home = () => {
     const [trendingProducts, setTrendingProducts] = useState([]);
     const [bestSalesProducts, setBestSalesProducts] = useState([]);
+    const [mobileProducts, setMobileProducts] = useState([]);
+    const [wirelessProducts, setWirelessProducts] = useState([]);
+    const [popularProducts, setPopularProducts] = useState([]);
 
     const year = new Date().getFullYear();
 
@@ -28,9 +31,15 @@ const Home = () => {
     useEffect(() => {
         const filteredTrendingProducts = product.filter((product) => product.category === 'chair');
         const filteredBestSalerProducts = product.filter((product) => product.category === 'sofa');
+        const filteredMobileProducts = product.filter((product) => product.category === 'mobile');
+        const filteredWirelessProducts = product.filter((product) => product.category === 'wireless');
+        const filteredPopularProducts = product.filter((product) => product.category === 'watch');
 
         setTrendingProducts(filteredTrendingProducts);
         setBestSalesProducts(filteredBestSalerProducts);
+        setMobileProducts(filteredMobileProducts);
+        setWirelessProducts(filteredWirelessProducts);
+        setPopularProducts(filteredPopularProducts);
     }, []);
 
     return (
@@ -66,7 +75,7 @@ const Home = () => {
             <section className="trending__products">
                 <Container>
                     <Row>
-                        <Col lg={12} className="text-center">
+                        <Col lg={12} className="text-center mb-5">
                             <h2 className="section__title">Trending Products</h2>
                         </Col>
                         <ProductList data={trendingProducts} />
@@ -78,7 +87,7 @@ const Home = () => {
             <section className="best__sales">
                 <Container>
                     <Row>
-                        <Col lg={12} className="text-center">
+                        <Col lg={12} className="text-center mb-5">
                             <h2 className="section__title">Best Sales</h2>
                         </Col>
                         <ProductList data={bestSalesProducts} />
@@ -103,6 +112,31 @@ const Home = () => {
                         <Col lg={6} md={6} className="text-end">
                             <img src={countTimeImg} alt="Time Count" />
                         </Col>
+                    </Row>
+                </Container>
+            </section>
+
+            {/* New Arrivals */}
+            <section className="new__arrivals">
+                <Container>
+                    <Row>
+                        <Col lg={12} className="text-center mb-5">
+                            <h2 className="section__title">New Arrivals</h2>
+                        </Col>
+                        <ProductList data={mobileProducts} />
+                        <ProductList data={wirelessProducts} />
+                    </Row>
+                </Container>
+            </section>
+
+            {/*Popular Category */}
+            <section className="popular__category">
+                <Container>
+                    <Row>
+                        <Col lg={12} className="text-center mb-5">
+                            <h2 className="section__title">Popular in Category</h2>
+                        </Col>
+                        <ProductList data={popularProducts} />
                     </Row>
                 </Container>
             </section>
