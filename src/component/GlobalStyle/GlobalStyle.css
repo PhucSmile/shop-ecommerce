@@ -88,6 +88,15 @@ section {
 .buy__btn a {
     color: var(--white);
 }
+@media only screen and (max-width: 768px) {
+    section {
+        padding: 40px 0px;
+    }
+
+    .buy__btn {
+        font-size: 0.8rem;
+    }
+}
 
 /* scrollBar css */
 /* html body {
@@ -110,9 +119,7 @@ html *::-webkit-scrollbar-track {
 } */
 
 /* @media only screen and (max-width: 768px) {
-    section {
-        padding: 40px 0px;
-    }
+  
 
     h1,
     h2 {

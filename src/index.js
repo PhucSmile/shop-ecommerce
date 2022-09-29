@@ -6,14 +6,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'remixicon/fonts/remixicon.css';
 import GlobalStyles from './component/GlobalStyle/GlobalStyle';
 import { BrowserRouter as Router } from 'react-router-dom';
+import store from './store/Store';
+import { Provider } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <Router>
-            <GlobalStyles>
-                <App />
-            </GlobalStyles>
+            <Provider store={store}>
+                {/* toastify */}
+                <ToastContainer theme="dark" position="top-right" autoClose={2000} closeOnClick pauseOnHover={false} />
+
+                <GlobalStyles>
+                    <App />
+                </GlobalStyles>
+            </Provider>
         </Router>
     </React.StrictMode>,
 );

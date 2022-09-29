@@ -33,3 +33,31 @@
         }
     }
 }
+
+@media only screen and (max-width: 992px) {
+    .product__item {
+        .product__info {
+            .product__name {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .product__item {
+        .product__info {
+            .product__name {
+                font-size: 1rem;
+            }
+
+            .product__item-bottom {
+                span {
+                    i {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

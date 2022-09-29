@@ -13,7 +13,7 @@ const Footer = () => {
         <footer className="footer">
             <Container>
                 <Row>
-                    <Col lg={4}>
+                    <Col lg={4} md={6} className="mb-4">
                         <div className="logo text-center">
                             <h1>Maltimart</h1>
                         </div>
@@ -23,7 +23,7 @@ const Footer = () => {
                             sapiente a?
                         </p>
                     </Col>
-                    <Col lg={3}>
+                    <Col lg={3} md={3} className="mb-4">
                         <div className="footer__quick-links">
                             <h4 className="quick__links-title">Top Categories</h4>
                             <ListGroup className="mb-3">
@@ -42,7 +42,7 @@ const Footer = () => {
                             </ListGroup>
                         </div>
                     </Col>
-                    <Col lg={2}>
+                    <Col lg={2} md={3} className="mb-4">
                         <div className="footer__quick-links">
                             <h4 className="quick__links-title">UseFul Links</h4>
                             <ListGroup className="mb-3">
@@ -61,7 +61,7 @@ const Footer = () => {
                             </ListGroup>
                         </div>
                     </Col>
-                    <Col lg={3}>
+                    <Col lg={3} md={4} className="mb-4">
                         <div className="footer__quick-links">
                             <h4 className="quick__links-title">Contact</h4>
                             <ListGroup className="mb-3">
@@ -86,26 +86,28 @@ const Footer = () => {
                             </ListGroup>
                         </div>
                     </Col>
-                    <Col lg={6} md={6} sm={6}>
-                        <p className="footer__copyright">
-                            Copyright - {year}, website made by Thành Phúc. All Rights Reserved.
-                        </p>
-                    </Col>
-                    <Col lg={6} md={6} sm={6}>
-                        <div className="footer__follow d-flex align-items-center justify-content-end gap-3">
-                            <p className="m-0">Follow:</p>
-                            <span>
-                                <a href="https://www.facebook.com/profile.php?id=100030760065201">
-                                    <i className="ri-facebook-line"></i>
-                                </a>
-                            </span>
-                            <span>
-                                <a href="https://github.com/PhucSmile?tab=repositories">
-                                    <i className="ri-github-line"></i>
-                                </a>
-                            </span>
-                        </div>
-                    </Col>
+                    <Row>
+                        <Col lg={6} md={6} sm={6}>
+                            <p className="footer__copyright">
+                                Copyright - {year}, website made by Thành Phúc. All Rights Reserved.
+                            </p>
+                        </Col>
+                        <Col lg={6} md={6} sm={6}>
+                            <div className="footer__follow d-flex align-items-center justify-content-end gap-3">
+                                <p className="m-0">Follow:</p>
+                                <span>
+                                    <a href="https://www.facebook.com/profile.php?id=100030760065201">
+                                        <i className="ri-facebook-line"></i>
+                                    </a>
+                                </span>
+                                <span>
+                                    <a href="https://github.com/PhucSmile?tab=repositories">
+                                        <i className="ri-github-line"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </Col>
+                    </Row>
                 </Row>
             </Container>
         </footer>

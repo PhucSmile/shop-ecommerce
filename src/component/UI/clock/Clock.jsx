@@ -36,7 +36,7 @@ const Clock = () => {
     });
 
     return (
-        <div className="clock__wrap d-flex align-items-center gap-5">
+        <div className="clock__wrap d-flex align-items-center">
             <div className="clock__data d-flex align-items-center gap-3">
                 <div className="text-center">
                     <h1>{days}</h1>

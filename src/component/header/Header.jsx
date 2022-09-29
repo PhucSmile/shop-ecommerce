@@ -2,12 +2,14 @@ import React, { useRef, useState } from 'react';
 import './Header.scss';
 import { motion } from 'framer-motion';
 
-import { NavLink, Link, useNavigate } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import logo from '../../assets/images/eco-logo.png';
 import user from '../../assets/images/user-icon.png';
+
+import { useSelector } from 'react-redux';
 
 const nav__links = [
     {
@@ -27,10 +29,12 @@ const nav__links = [
 const Header = () => {
     const [stickyScroll, setStickyScroll] = useState(false);
     const menuRef = useRef(null);
+    const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
     window.onscroll = () => {
         setStickyScroll(window.scrollY > 80 ? true : false);
-        return window.onscroll(null);
+        // clearUp
+        return () => window.onscroll(null);
     };
 
     const menuToggle = () => {
@@ -52,7 +56,8 @@ const Header = () => {
                         </div>
 
                         {/* Menu */}
-                        <div className="navigation" ref={menuRef} onClick={menuToggle}>
+                        <div className="navigation" ref={menuRef}>
+                            <div className="navigation__overlay" onClick={menuToggle}></div>
                             <div className="menu d-flex align-items-center gap-5">
                                 {nav__links.map((item, index) => (
                                     <NavLink
@@ -73,7 +78,7 @@ const Header = () => {
                             </span>
                             <span className="cart__icon">
                                 <i className="ri-briefcase-3-line"></i>
-                                <span className="badge">1</span>
+                                {totalQuantity >= 1 ? <span className="badge">{totalQuantity}</span> : null}
                             </span>
                             <span>
                                 <motion.img whileTap={{ scale: 1.2 }} src={user} alt="user" />

@@ -1,0 +1,14 @@
+.common__section {
+    background: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../../../assets/images/common.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+
+    h1 {
+        color: var(--white);
+        font-weight: 600;
+    }
+}

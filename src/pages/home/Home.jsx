@@ -99,7 +99,7 @@ const Home = () => {
             <section className="time__count">
                 <Container>
                     <Row>
-                        <Col lg={6} md={6}>
+                        <Col lg={6} md={12}>
                             <div className="clock__content">
                                 <h4>Limited Offers</h4>
                                 <h3>Quantity Armchair</h3>
@@ -109,8 +109,8 @@ const Home = () => {
                                 </motion.button>
                             </div>
                         </Col>
-                        <Col lg={6} md={6} className="text-end">
-                            <img src={countTimeImg} alt="Time Count" />
+                        <Col lg={6} md={12} className="text-end">
+                            <img src={countTimeImg} alt="Time Count" className="count__img" />
                         </Col>
                     </Row>
                 </Container>

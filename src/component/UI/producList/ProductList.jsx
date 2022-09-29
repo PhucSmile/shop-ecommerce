@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ProductList.scss';
 
 import ProductCart from '../productCart/ProductCart';
 
@@ -14,8 +13,8 @@ const ProductList = ({ data }) => {
     );
 };
 
-ProductList.propTypes = {
-    data: PropTypes.array.isRequired,
-};
+// ProductList.propTypes = {
+//     data: PropTypes.node.isRequired,
+// };
 
 export default ProductList;
