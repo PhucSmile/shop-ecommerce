@@ -83,7 +83,13 @@ section {
     border-radius: 5px;
     margin-top: 40px;
     background-color: var(--primary-color);
+    color: var(--white);
+
     cursor: pointer;
+}
+.buy__btn.auth__btn {
+    background-color: var(--white);
+    color: var(--primary-color);
 }
 .buy__btn a {
     color: var(--white);
@@ -97,32 +103,3 @@ section {
         font-size: 0.8rem;
     }
 }
-
-/* scrollBar css */
-/* html body {
-  overflow-y: overlay;
-}
-
-html *::-webkit-scrollbar {
-  border-radius: 0;
-  width: 2px;
-}
-
-html *::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.15);
-}
-
-html *::-webkit-scrollbar-track {
-  border-radius: 0;
-  background-color: rgba(0, 0, 0, 0);
-} */
-
-/* @media only screen and (max-width: 768px) {
-  
-
-    h1,
-    h2 {
-        font-size: 1.5rem;
-    }
-} */

@@ -4,10 +4,10 @@ import './CommonSection.scss';
 
 import Container from 'react-bootstrap/Container';
 
-const CommonSection = ({ title }) => {
+const CommonSection = ({ title, image }) => {
     return (
-        <section className="common__section">
-            <Container className="text-center">
+        <section className="common__section" style={{ backgroundImage: `url(${image})` }}>
+            <Container>
                 <h1>{title}</h1>
             </Container>
         </section>
@@ -16,6 +16,7 @@ const CommonSection = ({ title }) => {
 
 CommonSection.propTypes = {
     title: PropTypes.string,
+    image: PropTypes.node,
 };
 
 export default CommonSection;

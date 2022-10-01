@@ -1,0 +1,42 @@
+.section__cart {
+    table {
+        tr {
+            td {
+                line-height: 78px;
+
+                img {
+                    width: 70px;
+                    height: 70px;
+                    object-fit: cover;
+                }
+
+                i {
+                    cursor: pointer;
+                }
+
+                div {
+                    span {
+                        i {
+                            padding: 5px 10px;
+                        }
+                    }
+                }
+            }
+
+            td,
+            th {
+                color: var(--primary-color);
+                text-align: center;
+            }
+        }
+    }
+
+    .cart__checkout {
+        div {
+            span {
+                font-size: 1.7rem;
+                font-weight: 600;
+            }
+        }
+    }
+}

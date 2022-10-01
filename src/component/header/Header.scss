@@ -80,12 +80,6 @@
                 cursor: pointer;
             }
 
-            img {
-                width: 30px;
-                height: 30px;
-                cursor: pointer;
-            }
-
             &.fav__icon,
             &.cart__icon {
                 position: relative;
@@ -112,6 +106,37 @@
             // mobile menu
             &.mobile__menu {
                 display: none;
+            }
+        }
+        .profile {
+            img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50px;
+                object-fit: cover;
+                cursor: pointer;
+            }
+            .user__list {
+                background-color: var(--card-bg-01);
+                border-radius: 5px;
+                text-align: center;
+                -webkit-box-shadow: 0px 10px 13px -7px #000000, 2px 12px 36px 2px rgba(0, 0, 0, 0);
+                box-shadow: 0px 10px 13px -7px #000000, 2px 12px 36px 2px rgba(0, 0, 0, 0);
+
+                span {
+                    line-height: 30px;
+                    padding: 5px 16px;
+                    cursor: pointer;
+                    font-size: 0.9rem;
+                    font-weight: 400;
+
+                    a {
+                        color: var(--text);
+                    }
+                    &:hover {
+                        background-color: rgba(22, 24, 35, 0.03);
+                    }
+                }
             }
         }
     }

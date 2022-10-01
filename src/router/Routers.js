@@ -9,6 +9,8 @@ import Login from '../pages/login/Login';
 import Register from '../pages/register/Register';
 import Checkout from '../pages/checkout/Checkout';
 
+import ProtectedRouter from '../component/hooks/ProtectedRouter';
+
 const Routers = () => {
     return (
         <Routes>
@@ -19,7 +21,15 @@ const Routers = () => {
             <Route path="shop/:id" element={<Details />} />;
             <Route path="login" element={<Login />} />;
             <Route path="register" element={<Register />} />;
-            <Route path="checkout" element={<Checkout />} />;
+            <Route
+                path="checkout"
+                element={
+                    <ProtectedRouter>
+                        <Checkout />
+                    </ProtectedRouter>
+                }
+            />
+            ;
         </Routes>
     );
 };
